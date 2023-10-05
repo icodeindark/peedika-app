@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>peedika.com - Your Online Shopping Destination</title>
+    <!-- Bootstrap CSS link (already included) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Add your custom CSS here -->
+    <style>
+        /* Custom CSS styles go here */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .hero-section {
+            background-image: url('https://img.freepik.com/free-photo/supermarket-banner-concept-with-ingredients_23-2149421140.jpg?w=1380&t=st=1694178742~exp=1694179342~hmac=18cf99287990e96ae03bc05a10917ec7d525533868baaa7b12272a2317b1bd05');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 150px 0;
+        }
+        .site-title {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 25px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        .login-button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-button {
+            margin-top: 10px;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 25px;
+            border: 2px solid #007bff;
+            color: #007bff;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        .login-button:hover {
+            color: #fff;
+            background-color: #007bff;
+        }
+        .features-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+        .feature-item {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .feature-icon {
+            font-size: 36px;
+            color: #007bff;
+        }
+        .feature-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1 class="site-title">peedika.com</h1>
+        <p class="hero-subtitle">Your Online Shopping Destination</p>
+        <a href="{{ url_for('register') }}" class="btn btn-primary cta-button">
+            <span class="cta-button-text" >Sign Up</span>
+        </a>
+        <div class="login-button-container">
+            <a href="{{ url_for('login') }}" class="btn btn-outline-primary login-button">
+                <span class="login-button-text">Log In</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content Section (Add your content here) -->
+<section class="container features-section">
+    <div class="row">
+        <div class="col-md-4 feature-item">
+            <i class="fa fa-shopping-cart feature-icon"></i>
+            <h2 class="feature-title">Shop Latest Trends</h2>
+            <p>Discover the latest fashion trends and products.</p>
+        </div>
+        <div class="col-md-4 feature-item">
+            <i class="fa fa-truck feature-icon"></i>
+            <h2 class="feature-title">Fast Shipping</h2>
+            <p>Get your orders delivered quickly and reliably.</p>
+        </div>
+        <div class="col-md-4 feature-item">
+            <i class="fa fa-shield feature-icon"></i>
+            <h2 class="feature-title">Secure Shopping</h2>
+            <p>Shop with confidence using our secure payment system.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Add Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Bootstrap JavaScript and jQuery (already included) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peedika - Your Grocery Store</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add your custom CSS file here -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Peedika</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a> <!-- Add this logout link -->
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Carousel -->
+<!-- Carousel -->
+<div id="carouselExample" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://images.yourstory.com/cs/1/65c7c710-c186-11e8-af1c-974e95f3b2db/Online-Grocery-Store-Business1559562505205.jpg" class="d-block w-100" alt="Quality Products">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Quality Products</h5>
+                <p>We offer a wide range of high-quality grocery products to meet your needs.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.yourstory.com/cs/1/65c7c710-c186-11e8-af1c-974e95f3b2db/Online-Grocery-Store-Business1559562505205.jpg" class="d-block w-100" alt="Fast Delivery">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Fast Delivery</h5>
+                <p>Our efficient delivery service ensures your groceries reach your doorstep in no time.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.yourstory.com/cs/1/65c7c710-c186-11e8-af1c-974e95f3b2db/Online-Grocery-Store-Business1559562505205.jpg" class="d-block w-100" alt="24/7 Support">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>24/7 Support</h5>
+                <p>Have questions or need assistance? Our support team is available 24/7 to help you.</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+</div>
+<!-- Products Section -->
+<section id="products" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Our Products</h2>
+                <div class="row">
+                    {% for product in products %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">{{ product.description }}</p>
+                                <p class="card-text">Price: ${{ product.rate_per_unit }}</p>
+                                <!-- Add a button or link to view more details or add to cart -->
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor semper tellus, in aliquam velit
+                    egestas a.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Quality Products</h3>
+                <p>We offer a wide range of high-quality grocery products to meet your needs.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Fast Delivery</h3>
+                <p>Our efficient delivery service ensures your groceries reach your doorstep in no time.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>24/7 Support</h3>
+                <p>Have questions or need assistance? Our support team is available 24/7 to help you.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Contact Us</h2>
+                <p>Feel free to reach out to us if you have any questions or inquiries.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="4"
+                                  placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2023 Peedika Grocery Store</
